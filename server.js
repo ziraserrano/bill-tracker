@@ -6,7 +6,7 @@ require('dotenv').config()
 
 let db,
     dbConnectionStr = process.env.DB_STRING,
-    dbName = 'bills-tracker'
+    dbName = 'billsData'
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
 .then(client => {
@@ -21,12 +21,11 @@ app.use(express.json())
 
 
 app.get('/', (req, res) => {
-    res.render('index.ejs')
-    // db.collection('').find()
-    // .then( data => {
-    //     res.render('index.ejs')
-    // })
-    // .catch( error => console.error(error))
+    db.collection('bills').find().toArray()
+    .then( data => {
+        res.render('index.ejs', { info: data})
+    })
+    .catch( error => console.error(error))
 })
 
 
