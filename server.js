@@ -6,7 +6,7 @@ require('dotenv').config()
 
 let db,
     dbConnectionStr = process.env.DB_STRING,
-    dbName = 'bills'
+    dbName = 'bills-tracker'
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
 .then(client => {
@@ -14,6 +14,22 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
     db = client.db(dbName)
 })
 
-app.listen(PORT, () => {
-    console.log('Server is running on 3000')
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
+app.use(express.urlencoded({extended: true}))
+app.use(express.json())
+
+
+app.get('/', (req, res) => {
+    res.render('index.ejs')
+    // db.collection('').find()
+    // .then( data => {
+    //     res.render('index.ejs')
+    // })
+    // .catch( error => console.error(error))
+})
+
+
+app.listen(process.env.PORT || PORT, () => {
+    console.log(`Server is running on port ${PORT}`)
 })
