@@ -42,13 +42,11 @@ app.delete('/deleteBill', (req, res) => {
     db.collection('bills').deleteOne( { billName: req.body.billNameS})
     .then(result => {
         console.log('Bill Deleted')
-        response.json('Bill Deleted')
+        res.json('Bill Deleted')
     })
     .catch(error => console.error(error))
 
 })
-
-
 
 
 app.listen(process.env.PORT || PORT, () => {

@@ -6,8 +6,8 @@ Array.from(deleteInput).forEach( (element) => {
 
 
 async function deleteBill(){
-    const bName = document.querySelector('.bill-name')
-    const bAmount = document.querySelector('.amount')
+    const bName = document.querySelector('.bill-name').innerHTML
+    const bAmount = document.querySelector('.amount').innerHTML
 
     try {
         const response = await fetch ('/deleteBill', {
