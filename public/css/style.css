@@ -1,0 +1,51 @@
+section{
+    padding: 20px 20px;
+}
+
+/* TOP OF PAGE  */
+
+.header-form{
+    height: 150px;
+}
+
+/* BILLS SECTION */
+
+.bills{
+    height: 150px;
+    width: 50%;
+
+}
+
+.bill-info{
+    display: flex;
+    height: 100%;
+    border-top: 2px solid black;
+}
+
+.icon-border{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.bill-input{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+}
+
+.bill-name{
+    padding-bottom: 10px;
+}
+
+
+/* TOTAL AMOUNT SECTION */
+
+.total-section{
+    display: flex;
+}
+
+h3{
+    margin-right: 20px;
+}
