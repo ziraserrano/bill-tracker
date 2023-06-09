@@ -16,7 +16,7 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 
@@ -27,6 +27,15 @@ app.get('/', (req, res) => {
     })
     .catch( error => console.error(error))
 })
+
+app.post('/addBill', (req, res) => {
+    db.collection('bills').insertOne({ billName: req.body.billName, billAmount: req.body.billAmount})
+    .then(result => {
+        res.redirect('/')
+    })
+    .catch(error => console.error(error))
+})
+
 
 
 app.listen(process.env.PORT || PORT, () => {
