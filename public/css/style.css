@@ -1,5 +1,12 @@
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+}
+
 section{
-    padding: 20px 20px;
+    padding: 10px 20px;
 }
 
 /* TOP OF PAGE  */
@@ -11,15 +18,15 @@ section{
 /* BILLS SECTION */
 
 .bills{
-    height: 150px;
+    height: 100px;
     width: 50%;
-
 }
 
 .bill-info{
     display: flex;
     height: 100%;
     border-top: 2px solid black;
+    margin-bottom: 20px;
 }
 
 .icon-border{
