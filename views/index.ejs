@@ -18,35 +18,38 @@
             <input type="number" placeholder="AMOUNT" name="billAmount">
             <button type="submit">+</button>
         </form>
-
-        <section class="total-section">
-            <h3>Total Amount:</h3>
-            <h3>$</h3> <!-- total amount in USD currency - MATH! -->
-        </section>
     
     </section>
 
+    <section class="total-section">
+        <h3>Total Amount:</h3>
+        <h3>$</h3> <!-- total amount in USD currency - MATH! -->
+    </section>
 
-    <section class="bills"> <!-- put border/outline on top -->
-    <% for (let i = 0; i < info.length; i++) {%>
-        <section class="bill-info">
-            <section>
-                <div class="icon-border"></div>
+
+    <div>
+
+        <section class="bills"> <!-- put border/outline on top -->
+        <% for (let i = 0; i < info.length; i++) {%>
+            <section class="bill-info">
+                <section>
+                    <div class="icon-border"></div>
+                </section>
+                <section class="bill-input">
+                    <span class="bill-name"><%= info[i].billName %></span>
+                    <span class="amount"><%= info[i].billAmount %></span> <!-- figure out how to make it USD currency with decimal in USD currency-->
+                </section>
             </section>
-            <section class="bill-input">
-                <span class="bill-name"><%= info[i].billName %></span>
-                <span class="amount"><%= info[i].billAmount %></span> <!-- figure out how to make it USD currency with decimal in USD currency-->
-            </section>
+        <% } %>
         </section>
-    <% } %>
-    </section>
 
+        <section class="img-section">
+            <img src="images/jp-valery-mwNkPv3d_EI-unsplash.jpg">
+            <!-- used by -->
+        </section>
 
+    </div>
 
-    
-    <section>
-        <img src="../public/images/jp-valery-mwNkPv3d_EI-unsplash.jpg">
-    </section>
 
 
     <script src="js/main.js"></script>
