@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bills Tracker</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/bc1a30f7dd.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -35,10 +36,18 @@
                 <section>
                     <div class="icon-border"></div>
                 </section>
-                <section class="bill-input">
-                    <span class="bill-name"><%= info[i].billName %></span>
-                    <span class="amount"><%= info[i].billAmount %></span> <!-- figure out how to make it USD currency with decimal in USD currency-->
-                </section>
+
+                <div class="input-and-icons">                  
+                    <section class="bill-input">
+                        <span class="bill-name"><%= info[i].billName %></span>
+                        <span class="amount"><%= info[i].billAmount %></span> <!-- figure out how to make it USD currency with decimal in USD currency-->
+                    </section>
+                    <section class="icons">
+                        <i class="fa-solid fa-pen-to-square" style="color: #000000;"></i>
+                        <i class="fa-solid fa-trash fa-sm" style="color: #030303;"></i>
+                    </section>
+                </div>
+                
             </section>
         <% } %>
         </section>

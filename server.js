@@ -37,6 +37,17 @@ app.post('/addBill', (req, res) => {
 })
 
 
+app.delete('/deleteBill', (req, res) => {
+    db.collection('bills').deleteOne( { billName: req.body.billName})
+    .then(result => {
+        console.log('Bill Deleted')
+        res.json('Bill Deleted')
+    })
+    .catch(error => console.error(error))
+
+})
+
+
 
 app.listen(process.env.PORT || PORT, () => {
     console.log(`Server is running on port ${PORT}`)
