@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bills Tracker</title>
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-    <section>
+
+    <section class="header-form">
         <h1>Bills Tracker</h1> 
 
         <form>
@@ -19,23 +20,32 @@
         </form>
     </section>
 
+
     <section class="bills"> <!-- put border/outline on top -->
         <section class="bill-info">
-            <!-- icon -->
-            <span class="bill-name"></span>
-            <span class="amount"></span> <!-- figure out how to make it USD currency with decimal in USD currency-->
+            <section>
+                <div class="icon-border"></div>
+            </section>
+            <section class="bill-input">
+                <span class="bill-name">test</span>
+                <span class="amount">test</span> <!-- figure out how to make it USD currency with decimal in USD currency-->
+            </section>
 
         </section>
     </section>
 
-    <section>
+
+    <section class="total-section">
         <h3>Total Amount:</h3>
-        <span>$</span> <!-- total amount in USD currency - MATH! -->
+        <h3>$</h3> <!-- total amount in USD currency - MATH! -->
     </section>
 
+    
     <section>
         <!-- image for right side -->
     </section>
+
+
     <script src="js/main.js"></script>
 </body>
 </html>
