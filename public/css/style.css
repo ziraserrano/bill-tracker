@@ -2,17 +2,26 @@ body{
     display: flex;
     flex-direction: column;
     height: 100vh;
+}
+
+
+body > div {
+    display: flex;  /* this code puts bill info and img side by side */
 
 }
 
 section{
-    padding: 10px 20px;
+    padding: 10px 10px;
 }
 
 /* TOP OF PAGE  */
 
 .header-form{
     height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* BILLS SECTION */
@@ -55,4 +64,14 @@ section{
 
 h3{
     margin-right: 20px;
+}
+
+/* image */
+
+.img-section{
+    height: 100%;
+}
+
+img{
+    height: 10%;
 }
