@@ -1,9 +1,6 @@
-const { MongoClient} = require('mongodb');
-
-
 const express = require('express')
 const app = express()
-// const MongoClient = require('mongodb').MongoClient
+const MongoClient = require('mongodb').MongoClient
 const PORT = process.env.PORT || 3000
 const cors = require("cors")
 
@@ -58,3 +55,4 @@ app.delete('/deleteBill', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
+
