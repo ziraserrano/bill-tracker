@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
-const PORT = 3000
+let PORT = 3000
 const cors = require("cors")
 
 require('dotenv').config()
@@ -41,7 +41,6 @@ app.post('/addBill', (req, res) => {
 
 
 app.delete('/deleteBill', (req, res) => {
-    console.log(req)
     db.collection('bills').deleteOne( { billName: req.body.billNameS})
     .then(result => {
         console.log('Bill Deleted')
