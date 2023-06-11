@@ -1,6 +1,9 @@
+const { MongoClient} = require('mongodb');
+
+
 const express = require('express')
 const app = express()
-const MongoClient = require('mongodb').MongoClient
+// const MongoClient = require('mongodb').MongoClient
 const PORT = process.env.PORT || 3000
 const cors = require("cors")
 
@@ -30,6 +33,7 @@ app.get('/', (req, res) => {
     })
     .catch( error => console.error(error))
 })
+
 
 app.post('/addBill', (req, res) => {
     db.collection('bills').insertOne({ billName: req.body.billName, billAmount: req.body.billAmount})
