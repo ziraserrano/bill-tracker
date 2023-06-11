@@ -51,14 +51,7 @@ app.delete('/deleteBill', (req, res) => {
 
 })
 
-
-connectDB().then(() => {
-    app.listen(PORT, () => {
-        console.log("listening for requests");
-    })
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`)
 })
-
-// app.listen(PORT, () => {
-//     console.log(`Server is running on port ${PORT}`)
-// })
 
