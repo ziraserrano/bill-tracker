@@ -1,8 +1,7 @@
-const express = require('express')
-const app = express()
-const MongoClient = require('mongodb').MongoClient
+const { MongoClient } = require('mongodb');
+const express = require('express');
+const app = express();
 const PORT = process.env.PORT || 3000
-
 
 require('dotenv').config()
 
@@ -23,8 +22,8 @@ app.use(express.json())
 
 
 
-app.get('/', (req, res) => {
-    db.collection('bills').find().toArray()
+app.get('/', async (req, res) => {
+    await db.collection('bills').find().toArray()
     .then( data => {
         res.render('index.ejs', { info: data})
     })
@@ -50,6 +49,8 @@ app.delete('/deleteBill', (req, res) => {
     .catch(error => console.error(error))
 
 })
+
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
