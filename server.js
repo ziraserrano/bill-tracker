@@ -31,7 +31,7 @@ app.use(express.json())
 // })
 
 app.get('/',async (req, res)=>{
-    const billItems = await db.Collection('bills').find().toArray()
+    const billItems = await db.collection('bills').find().toArray()
     res.render('index.ejs', { items: billItems})
 })
 
