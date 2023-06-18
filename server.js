@@ -31,12 +31,12 @@ app.use(express.json())
 // })
 
 app.get('/',async (req, res)=>{
-    const billItems = await db.collection('bills').find().toArray()
+    const billItems = await db.collections('bills').find().toArray()
     res.render('index.ejs', { items: billItems})
 })
 
 app.post('/addBill', (req, res) => {
-    db.collection('bills').insertOne({ billName: req.body.billName, billAmount: req.body.billAmount})
+    db.collections('bills').insertOne({ billName: req.body.billName, billAmount: req.body.billAmount})
     .then(result => {
         res.redirect('/')
     })
@@ -45,7 +45,7 @@ app.post('/addBill', (req, res) => {
 
 
 app.delete('/deleteBill', (req, res) => {
-    db.collection('bills').deleteOne( { billName: req.body.billNameS})
+    db.collections('bills').deleteOne( { billName: req.body.billNameS})
     .then(result => {
         console.log('Bill Deleted')
         res.json('Bill Deleted')
