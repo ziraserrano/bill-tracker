@@ -1,5 +1,7 @@
-# bill-tracker
-Express, MongoDB, EJS Class 41 - 100Devs
+# bill-tracker - [Live] (https://uptight-pig-gilet.cyclic.app/)
 
+Simple CRUD app built with Express, MongoDB, EJS.
 
-Simple Bill Tracker CRUD app using Express, MongoDB, and EJS.
+TODO's:
+
+- add Update functionality to edit button
