@@ -9,12 +9,24 @@ let db,
     dbConnectionStr = process.env.DB_STRING,
     dbName = 'billsData'
 
-MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
-.then(client => {
-    console.log(`Connected to ${dbName} Database`)
-    db = client.db(dbName)
-})
+async function main() {
+    await MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
+        .then(client => {
 
+            db = client.db(dbName)
+            app.listen(PORT, () => {
+                console.log(`Server is running on port ${PORT}`)
+            })
+
+            return console.log(`Connected to ${dbName} Database`)
+                        
+            // console.log(`Connected to ${dbName} Database`)
+            // db = client.db(dbName)
+        })
+}
+
+
+main().catch(console.error)
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
@@ -53,7 +65,7 @@ app.delete('/deleteBill', (req, res) => {
 
 
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
-})
+// app.listen(PORT, () => {
+//     console.log(`Server is running on port ${PORT}`)
+// })
 
