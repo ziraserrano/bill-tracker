@@ -4,4 +4,5 @@ Simple CRUD app built with Express, MongoDB, EJS.
 
 TODO's:
 
-- add Update functionality to edit button
+- Add Update functionality to the edit button
+- Configure the total dollar amount with the data entered
