@@ -22,18 +22,15 @@ app.use(express.json())
 
 
 
-// app.get('/', async (req, res) => {
-//     await db.collection('bills').find().toArray()
-//     .then( data => {
-//         res.render('index.ejs', { info: data})
-//     })
-//     .catch( error => console.error(error))
-// })
-
-app.get('/',async (req, res)=>{
-    const billItems = await db.collection('bills').find().toArray()
-    res.render('index.ejs', { items: billItems})
+app.get('/', async (req, res) => {
+    await db.collection('bills').find().toArray()
+    .then( data => {
+        res.render('index.ejs', { info: data})
+    })
+    .catch( error => console.error(error))
 })
+
+
 
 app.post('/addBill', (req, res) => {
     db.collection('bills').insertOne({ billName: req.body.billName, billAmount: req.body.billAmount})
